@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  mode: 'development', // or 'production' or 'none'
   // The entry point of the web application
   entry: './src/index.js',
   // The output configuration of the web application
