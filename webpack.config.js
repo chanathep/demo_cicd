@@ -18,5 +18,13 @@ module.exports = {
     port: 3000,
     // The content base of the development server
     contentBase: './dist'
-  }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i, // A regex to match CSS files
+        use: ["style-loader", "css-loader"], // An array of loaders to apply
+      },
+    ],
+  },
 };
