@@ -116,7 +116,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n// Import the style file\n\n\n// Get the element with the id of app\nconst app = document.getElementById('app');\n\n// Create a heading element\nconst heading = document.createElement('h1');\n// Set the text content of the heading element\nheading.textContent = 'Hello, GitHub CI/CD!';\n// Append the heading element to the app element\napp.appendChild(heading);\n\n\n//# sourceURL=webpack://github-cicd-demo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n// Import the style file\n\n\n// Get the element with the id of app\nconst app = document.getElementById('app');\n\n// Create a heading element\nconst heading = document.createElement('h1');\n// Set the text content of the heading element\nheading.textContent = 'Hello, GitHub CI/CD!';\n// Append the heading element to the app element\napp.appendChild(heading);\n// 20240118\n\n\n//# sourceURL=webpack://github-cicd-demo/./src/index.js?");
 
 /***/ })
 
