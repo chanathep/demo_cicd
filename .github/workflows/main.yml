@@ -1,0 +1,64 @@
+name: CI/CD Demo
+
+# This workflow will run on every push to the main branch
+on:
+  push:
+    branches: [ main ]
+
+# This workflow has two jobs: build and deploy
+jobs:
+  # This job will build the web application using Node.js
+  build:
+    # This job will run on a GitHub-hosted runner with Ubuntu
+    runs-on: ubuntu-latest
+
+    # This job has some steps to follow
+    steps:
+      # This step will check out the code from the repository
+      - uses: actions/checkout@v2
+
+      # This step will install Node.js on the runner
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      # This step will install the dependencies for the web application
+      - name: Install dependencies
+        run: npm install
+
+      # This step will run the tests for the web application
+      - name: Run tests
+        run: npm test
+
+  # This job will deploy the web application to GitHub Pages
+  deploy:
+    # This job will run on a GitHub-hosted runner with Ubuntu
+    runs-on: ubuntu-latest
+
+    # This job needs the build job to finish successfully before running
+    needs: build
+
+    # This job has some steps to follow
+    steps:
+      # This step will check out the code from the repository
+      - uses: actions/checkout@v2
+
+      # This step will install Node.js on the runner
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      # This step will install the dependencies for the web application
+      - name: Install dependencies
+        run: npm install
+
+      # This step will build the web application for production
+      - name: Build
+        run: npm run build
+
+      # This step will deploy the web application to GitHub Pages using an action from the GitHub Marketplace
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages # The branch where the web application will be deployed
+          folder: dist # The folder where the web application files are located
