@@ -4,7 +4,7 @@ name: CI/CD Demo
 on:
   push:
     tags:
-      'tag-*'
+      ['tag-*']
 
 permissions:
   contents: write
