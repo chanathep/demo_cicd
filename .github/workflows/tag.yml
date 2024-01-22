@@ -3,7 +3,8 @@ name: CI/CD Demo
 # This workflow will run on every push to the main branch
 on:
   push:
-    branches: [ main ]
+    tags:
+      'tag-*'
 
 permissions:
   contents: write
