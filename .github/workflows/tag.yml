@@ -15,7 +15,7 @@ jobs:
   build:
     # This job will run on a GitHub-hosted runner with Ubuntu
     # runs-on: ubuntu-latest
-    runs-on: [self-hosted, linux, x64, gpu]
+    runs-on: [self-hosted, linux, x64]
 
     # This job has some steps to follow
     steps:
@@ -38,7 +38,8 @@ jobs:
   # This job will deploy the web application to GitHub Pages
   deploy:
     # This job will run on a GitHub-hosted runner with Ubuntu
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
 
     # This job needs the build job to finish successfully before running
     needs: build
